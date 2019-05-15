@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CsK23T2bModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'CsK23T2b.dbo.Dathangtructuyen' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Dathangtructuyen">
+          <Key>
+            <PropertyRef Name="Madh" />
+            <PropertyRef Name="Makh" />
+            <PropertyRef Name="Masp" />
+            <PropertyRef Name="Tinhtrangsp" />
+            <PropertyRef Name="Soluongsp" />
+            <PropertyRef Name="Loaihinhtt" />
+            <PropertyRef Name="Ngaygiomuahang" />
+            <PropertyRef Name="Diachigh" />
+            <PropertyRef Name="Diachikh" />
+            <PropertyRef Name="SDTkh" />
+            <PropertyRef Name="Emailkh" />
+          </Key>
+          <Property Name="Madh" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Makh" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Masp" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Tinhtrangsp" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Soluongsp" Type="int" Nullable="false" />
+          <Property Name="Loaihinhtt" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Ngaygiomuahang" Type="datetime" Nullable="false" />
+          <Property Name="Diachigh" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Diachikh" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="SDTkh" Type="int" Nullable="false" />
+          <Property Name="Emailkh" Type="nvarchar" MaxLength="500" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'CsK23T2b.dbo.Donhang' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Donhang">
+          <Key>
+            <PropertyRef Name="Chitietdh" />
+            <PropertyRef Name="Giatien" />
+          </Key>
+          <Property Name="Chitietdh" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Loaihinhtt" Type="nvarchar(max)" />
+          <Property Name="Giatien" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NguoiDung">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ho" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Ten" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Tuoi" Type="int" Nullable="false" />
+          <Property Name="Ngaysinh" Type="date" Nullable="false" />
+          <Property Name="SDT" Type="int" Nullable="false" />
+          <Property Name="Diachi" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Gioitinh" Type="nvarchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="QuanTriVien">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ho" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Ten" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="SDT" Type="int" Nullable="false" />
+          <Property Name="Chucvu" Type="nvarchar" MaxLength="500" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sanpham">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tensp" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Loaisp" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Gia" Type="int" Nullable="false" />
+          <Property Name="Soluong" Type="int" Nullable="false" />
+          <Property Name="Xuatxu" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Chitietsp" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Nhasx" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Nhacungcap" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Hinhanh" Type="image" />
+        </EntityType>
+        <EntityContainer Name="CsK23T2bModelStoreContainer">
+          <EntitySet Name="NguoiDung" EntityType="Self.NguoiDung" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QuanTriVien" EntityType="Self.QuanTriVien" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sanpham" EntityType="Self.Sanpham" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Dathangtructuyen" EntityType="Self.Dathangtructuyen" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Dathangtructuyen].[Madh] AS [Madh], 
+    [Dathangtructuyen].[Makh] AS [Makh], 
+    [Dathangtructuyen].[Masp] AS [Masp], 
+    [Dathangtructuyen].[Tinhtrangsp] AS [Tinhtrangsp], 
+    [Dathangtructuyen].[Soluongsp] AS [Soluongsp], 
+    [Dathangtructuyen].[Loaihinhtt] AS [Loaihinhtt], 
+    [Dathangtructuyen].[Ngaygiomuahang] AS [Ngaygiomuahang], 
+    [Dathangtructuyen].[Diachigh] AS [Diachigh], 
+    [Dathangtructuyen].[Diachikh] AS [Diachikh], 
+    [Dathangtructuyen].[SDTkh] AS [SDTkh], 
+    [Dathangtructuyen].[Emailkh] AS [Emailkh]
+    FROM [dbo].[Dathangtructuyen] AS [Dathangtructuyen]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Donhang" EntityType="Self.Donhang" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Donhang].[Chitietdh] AS [Chitietdh], 
+    [Donhang].[Loaihinhtt] AS [Loaihinhtt], 
+    [Donhang].[Giatien] AS [Giatien]
+    FROM [dbo].[Donhang] AS [Donhang]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CsK23T2bModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="NguoiDung">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ho" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Ten" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Tuoi" Type="Int32" Nullable="false" />
+          <Property Name="Ngaysinh" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="SDT" Type="Int32" Nullable="false" />
+          <Property Name="Diachi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Gioitinh" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="QuanTriVien">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ho" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Ten" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SDT" Type="Int32" Nullable="false" />
+          <Property Name="Chucvu" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sanpham">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tensp" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Loaisp" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Gia" Type="Int32" Nullable="false" />
+          <Property Name="Soluong" Type="Int32" Nullable="false" />
+          <Property Name="Xuatxu" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Chitietsp" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Nhasx" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Nhacungcap" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Hinhanh" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Dathangtructuyen">
+          <Key>
+            <PropertyRef Name="Madh" />
+            <PropertyRef Name="Makh" />
+            <PropertyRef Name="Masp" />
+            <PropertyRef Name="Tinhtrangsp" />
+            <PropertyRef Name="Soluongsp" />
+            <PropertyRef Name="Loaihinhtt" />
+            <PropertyRef Name="Ngaygiomuahang" />
+            <PropertyRef Name="Diachigh" />
+            <PropertyRef Name="Diachikh" />
+            <PropertyRef Name="SDTkh" />
+            <PropertyRef Name="Emailkh" />
+          </Key>
+          <Property Name="Madh" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Makh" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Masp" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Tinhtrangsp" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Soluongsp" Type="Int32" Nullable="false" />
+          <Property Name="Loaihinhtt" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Ngaygiomuahang" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Diachigh" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Diachikh" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SDTkh" Type="Int32" Nullable="false" />
+          <Property Name="Emailkh" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Donhang">
+          <Key>
+            <PropertyRef Name="Chitietdh" />
+            <PropertyRef Name="Giatien" />
+          </Key>
+          <Property Name="Chitietdh" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Loaihinhtt" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Giatien" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="CsK23T2bEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="NguoiDungs" EntityType="Self.NguoiDung" />
+          <EntitySet Name="QuanTriViens" EntityType="Self.QuanTriVien" />
+          <EntitySet Name="Sanphams" EntityType="Self.Sanpham" />
+          <EntitySet Name="Dathangtructuyens" EntityType="Self.Dathangtructuyen" />
+          <EntitySet Name="Donhangs" EntityType="Self.Donhang" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CsK23T2bModelStoreContainer" CdmEntityContainer="CsK23T2bEntities">
+          <EntitySetMapping Name="NguoiDungs">
+            <EntityTypeMapping TypeName="CsK23T2bModel.NguoiDung">
+              <MappingFragment StoreEntitySet="NguoiDung">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Ho" ColumnName="Ho" />
+                <ScalarProperty Name="Ten" ColumnName="Ten" />
+                <ScalarProperty Name="Tuoi" ColumnName="Tuoi" />
+                <ScalarProperty Name="Ngaysinh" ColumnName="Ngaysinh" />
+                <ScalarProperty Name="SDT" ColumnName="SDT" />
+                <ScalarProperty Name="Diachi" ColumnName="Diachi" />
+                <ScalarProperty Name="Gioitinh" ColumnName="Gioitinh" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QuanTriViens">
+            <EntityTypeMapping TypeName="CsK23T2bModel.QuanTriVien">
+              <MappingFragment StoreEntitySet="QuanTriVien">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Ho" ColumnName="Ho" />
+                <ScalarProperty Name="Ten" ColumnName="Ten" />
+                <ScalarProperty Name="SDT" ColumnName="SDT" />
+                <ScalarProperty Name="Chucvu" ColumnName="Chucvu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sanphams">
+            <EntityTypeMapping TypeName="CsK23T2bModel.Sanpham">
+              <MappingFragment StoreEntitySet="Sanpham">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Tensp" ColumnName="Tensp" />
+                <ScalarProperty Name="Loaisp" ColumnName="Loaisp" />
+                <ScalarProperty Name="Gia" ColumnName="Gia" />
+                <ScalarProperty Name="Soluong" ColumnName="Soluong" />
+                <ScalarProperty Name="Xuatxu" ColumnName="Xuatxu" />
+                <ScalarProperty Name="Chitietsp" ColumnName="Chitietsp" />
+                <ScalarProperty Name="Nhasx" ColumnName="Nhasx" />
+                <ScalarProperty Name="Nhacungcap" ColumnName="Nhacungcap" />
+                <ScalarProperty Name="Hinhanh" ColumnName="Hinhanh" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Dathangtructuyens">
+            <EntityTypeMapping TypeName="CsK23T2bModel.Dathangtructuyen">
+              <MappingFragment StoreEntitySet="Dathangtructuyen">
+                <ScalarProperty Name="Madh" ColumnName="Madh" />
+                <ScalarProperty Name="Makh" ColumnName="Makh" />
+                <ScalarProperty Name="Masp" ColumnName="Masp" />
+                <ScalarProperty Name="Tinhtrangsp" ColumnName="Tinhtrangsp" />
+                <ScalarProperty Name="Soluongsp" ColumnName="Soluongsp" />
+                <ScalarProperty Name="Loaihinhtt" ColumnName="Loaihinhtt" />
+                <ScalarProperty Name="Ngaygiomuahang" ColumnName="Ngaygiomuahang" />
+                <ScalarProperty Name="Diachigh" ColumnName="Diachigh" />
+                <ScalarProperty Name="Diachikh" ColumnName="Diachikh" />
+                <ScalarProperty Name="SDTkh" ColumnName="SDTkh" />
+                <ScalarProperty Name="Emailkh" ColumnName="Emailkh" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Donhangs">
+            <EntityTypeMapping TypeName="CsK23T2bModel.Donhang">
+              <MappingFragment StoreEntitySet="Donhang">
+                <ScalarProperty Name="Chitietdh" ColumnName="Chitietdh" />
+                <ScalarProperty Name="Loaihinhtt" ColumnName="Loaihinhtt" />
+                <ScalarProperty Name="Giatien" ColumnName="Giatien" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
